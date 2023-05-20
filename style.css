@@ -1,0 +1,9 @@
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: "Wix Madefor Display", sans-serif;
+}
+.wrapper {
+  transform: translateY(-50%);
+}
