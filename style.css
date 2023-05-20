@@ -7,3 +7,30 @@ body {
 .wrapper {
   transform: translateY(-50%);
 }
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px dotted blue;
+}
+.heading {
+  flex: 4;
+}
+.header-img {
+  width: 100px;
+  flex: 1;
+}
+.main {
+  border: 1px dotted blue;
+}
+
+.add-task {
+  border: 1px solid orange;
+  display: flex;
+}
+.task-input {
+  flex: 9;
+}
+.btn-addTask {
+  flex: 1;
+}
