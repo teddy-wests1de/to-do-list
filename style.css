@@ -1,11 +1,13 @@
 body {
   display: grid;
-  place-content: center;
+  justify-content: center;
   min-height: 100vh;
   font-family: "Wix Madefor Display", sans-serif;
 }
 .wrapper {
-  transform: translateY(-50%);
+  border: 1px solid rgb(130, 226, 95);
+  margin: 2rem;
+  min-width: 300px;
 }
 header {
   display: flex;
@@ -15,21 +17,66 @@ header {
 }
 .heading {
   flex: 4;
+  margin-left: 1rem;
 }
 .header-img {
-  width: 100px;
+  /* width: 100px; */
   flex: 1;
 }
 .main {
   border: 1px dotted blue;
+  padding: 0.5rem;
 }
 
 .add-task {
   border: 1px solid orange;
   display: flex;
+  flex-wrap: nowrap;
+  margin-top: 1rem;
+}
+
+.btn-add {
+  flex: 1;
+  border-style: none;
+  font-size: 1.4rem;
+  padding: 2px 10px;
+  border: 1px solid blue;
+}
+.subheading {
+  margin-top: 1rem;
+}
+.task-item {
+  list-style: none;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.2rem 0;
+}
+.task-item:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+.task-item button {
+  flex: 1;
+  border-style: none;
+  /* padding: 0.5px 0.5px; */
+  border: none;
+  background-color: transparent;
+}
+.task-item li {
+  flex: 12;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+.fa-regular {
+  color: black;
+  font-size: 1.4rem;
 }
 .task-input {
   flex: 9;
+  padding: 0 0.75rem;
+  font-size: 1.4rem;
 }
 .btn-addTask {
   flex: 1;
