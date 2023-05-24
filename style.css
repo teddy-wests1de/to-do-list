@@ -1,83 +1,107 @@
 body {
   display: grid;
   justify-content: center;
-  min-height: 100vh;
+  font-size: 16px;
   font-family: "Wix Madefor Display", sans-serif;
 }
 .wrapper {
   border: 1px solid rgb(130, 226, 95);
-  margin: 2rem;
-  min-width: 300px;
+  margin: 1.5rem;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  overflow: hidden;
 }
 header {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: stretch;
   align-items: center;
-  border: 1px dotted blue;
+  background-color: rgb(247, 247, 247);
+  border-radius: 10px 10px 0 0;
+  color: #3d550c;
 }
 .heading {
   flex: 4;
   margin-left: 1rem;
 }
-.header-img {
-  /* width: 100px; */
-  flex: 1;
-}
 .main {
-  border: 1px dotted blue;
-  padding: 0.5rem;
+  margin: auto;
 }
 
 .add-task {
-  border: 1px solid orange;
+  background-color: #ecf87f;
   display: flex;
-  flex-wrap: nowrap;
-  margin-top: 1rem;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .btn-add {
   flex: 1;
   border-style: none;
   font-size: 1.4rem;
-  padding: 2px 10px;
-  border: 1px solid blue;
+  padding: 2px 0;
+  /* border: 1px solid blue; */
+  border-radius: 0 5px 5px 0;
+  background-color: #3d550c;
+  color: #ecf87f;
+  /* transform: translateX(-50%); */
 }
-.subheading {
-  margin-top: 1rem;
-}
-.task-item {
-  list-style: none;
-  border: 1px solid red;
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-  padding: 0.2rem 0;
-}
-.task-item:hover {
-  cursor: pointer;
-  background-color: gray;
+
+.task-input {
+  flex: 4;
+  padding: 0.2rem 0.75rem;
+  font-size: 1.2rem;
 }
 .task-item button {
   flex: 1;
   border-style: none;
-  /* padding: 0.5px 0.5px; */
   border: none;
   background-color: transparent;
+}
+.subheading {
+  margin-top: 1rem;
+  font-weight: 300;
+}
+.task-list {
+  background-color: #ecf87f;
+  padding: 0.5rem;
+}
+.task-item {
+  background-color: #ecf87f;
+  list-style: none;
+  border: 2px solid #90ee90;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.2rem 0;
+  border-radius: 5px;
+}
+.task-item:hover {
+  cursor: pointer;
+  background-color: rgb(246, 246, 177);
 }
 .task-item li {
   flex: 12;
   margin-left: 0.5rem;
   font-size: 1.5rem;
+  color: #51bb51;
 }
 .fa-regular {
-  color: black;
+  color: #51bb51;
   font-size: 1.4rem;
 }
-.task-input {
-  flex: 9;
-  padding: 0 0.75rem;
-  font-size: 1.4rem;
+.fa-trash-can {
+  color: rgba(220, 133, 133, 0.732);
 }
-.btn-addTask {
-  flex: 1;
+.fa-trash-can:hover {
+  color: red;
+}
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }

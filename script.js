@@ -8,30 +8,24 @@ const setDate = document.querySelector(".date");
 
 const initSetup = function () {
   document.querySelector(".subheading").innerText =
-    "You have 0 items to do today. 🥳";
-  newTask.innerText = "";
+    "You have 0 things to do today. 🥳";
+  newTask.value = "";
 };
 initSetup();
 
-const updateSubheading = function (checked) {
+const updateSubheading = function (checked, value) {
   if (checked) {
-    listItems.pop();
-    items = listItems.length > 1 ? "items" : "item";
+    listItems.splice(value, 1);
   } else {
-    listItems.push(1);
+    listItems.push(value);
   }
-  console.log(listItems.length);
+  items = listItems.length > 1 ? "things" : "thing";
   return (description.innerText = `You have ${listItems.length} ${items} to do today.`);
 };
 // updateSubheading(true);
 // ------------------ Button to add task to list -------------------------------------------------
 addTask.addEventListener("click", function () {
   let task = document.createElement("div");
-
-  // Add label to click
-  let taskLabel = document.createElement("label");
-  taskLabel.classList.add("task-label");
-  task.append(taskLabel);
 
   // Add task check button
   let checkBtn = document.createElement("button");
@@ -48,29 +42,30 @@ addTask.addEventListener("click", function () {
   let delBtn = document.createElement("button");
   delBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
   delBtn.classList.add("delete-btn");
+  delBtn.id = `${newTask.value}`;
+
   task.append(delBtn);
 
   // Add Task with description, checkbox and button to list
   taskList.append(task);
   task.classList.add("task-item");
-  //   listItems.push(li);
-  //   items = listItems.length > 1 ? "items" : "item";
-  //   description.innerText = `You have ${listItems.length} ${items} to do today.`;
-  updateSubheading(false);
-  newTask.innerText = "";
+  updateSubheading(false, `${newTask.value}`);
+  console.log(`${newTask.value}`);
+  newTask.value = "";
+  newTask.focus();
 
   // Click on div to check off a task.
   task.addEventListener("click", function () {
     li.style.textDecoration = "line-through";
     checkBtn.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
-    updateSubheading(true);
   });
 
   // Click delete button to remove task
   delBtn.addEventListener("click", function (e) {
     let target = e.target;
     target.parentElement.parentElement.remove();
-    updateSubheading(true);
+    updateSubheading(true, listItems.indexOf(target.parentElement.id));
+    console.log(target.parentElement.id);
   });
 });
 // -----------------------------------------------------------------------------------
